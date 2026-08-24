@@ -1,0 +1,3 @@
+Vi søger en udvikler med erfaring inden for python, Git og SQL.
+Du kommer til at arbejde med PostgreSQL og REST API.
+Kendskab til docker er en fordel.

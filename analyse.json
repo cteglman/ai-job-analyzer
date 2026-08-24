@@ -1,0 +1,22 @@
+{
+    "characters": 150,
+    "words": 28,
+    "long_words": 4,
+    "found_skills": [
+        "python",
+        "sql",
+        "postgresql",
+        "docker",
+        "git",
+        "rest"
+    ],
+    "matched_skills": [
+        "SQL",
+        "Git",
+        "Python"
+    ],
+    "missing_skills": [
+        "COBOL",
+        "DB2"
+    ]
+}
