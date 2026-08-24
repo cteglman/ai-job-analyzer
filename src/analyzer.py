@@ -52,11 +52,11 @@ def analyze_text(text):
         }
     return resultat
 
-with open("jobannonce.txt", "r", encoding="utf-8") as file:
+with open("data/jobannonce.txt", "r", encoding="utf-8") as file:
     text = file.read()
 
 result = analyze_text(text)
 
-with open("analyse.json", "w", encoding="utf-8") as file:
+with open("output/analyse.json", "w", encoding="utf-8") as file:
     json.dump(result, file, indent=4, ensure_ascii=False)
 
