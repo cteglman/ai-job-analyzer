@@ -11,16 +11,10 @@ skills = [
     "DB2"
 ]
 
-candidate_skills = [
-    "COBOL",
-    "DB2",
-    "SQL",
-    "Git",
-    "Python"
-]
-
-
-def analyze_text(text):
+with open("data/candidate.json", "r", encoding="utf-8") as file:
+    candidate = json.load(file)
+       
+def analyze_job(text, candidate_skills):
     long_words = 0
     ord_list = text.split()
     found_skills = []
@@ -62,7 +56,7 @@ def analyze_text(text):
 with open("data/jobannonce.txt", "r", encoding="utf-8") as file:
     text = file.read()
 
-result = analyze_text(text)
+result = analyze_job(text, candidate["skills"])
 
 with open("output/analyse.json", "w", encoding="utf-8") as file:
     json.dump(result, file, indent=4, ensure_ascii=False)
