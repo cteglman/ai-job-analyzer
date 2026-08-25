@@ -27,25 +27,32 @@ def analyze_text(text):
     matched_skills = []
     missing_skills = []
     text_lower = text.lower()
+    candidate_skills_lower = [skill.lower() for skill in candidate_skills]
 
     for skill in skills:
         if skill.lower() in text_lower:
-            found_skills.append(skill.lower())
+            found_skills.append(skill)
 
-    for cskill in candidate_skills:
-        if cskill.lower() in found_skills:
-            matched_skills.append(cskill)
+    for skill in found_skills:
+        if skill.lower() in candidate_skills_lower:
+            matched_skills.append(skill)
         else:
-            missing_skills.append(cskill)
+            missing_skills.append(skill)
 
     for ord in ord_list:
         if len(ord) > 7:
             long_words += 1
 
+    if len(found_skills) > 0:
+        match_percentage = round(len(matched_skills) / len(found_skills) * 100, 1)
+    else:
+        match_percentage = 0
+
     resultat = {
         "characters": len(text), 
         "words": len(ord_list),
         "long_words": long_words,
+        "match_percentage": match_percentage,
         "found_skills": found_skills,
         "matched_skills": matched_skills,
         "missing_skills": missing_skills

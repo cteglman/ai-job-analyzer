@@ -2,21 +2,23 @@
     "characters": 150,
     "words": 28,
     "long_words": 4,
+    "match_percentage": 50.0,
     "found_skills": [
-        "python",
-        "sql",
-        "postgresql",
-        "docker",
-        "git",
-        "rest"
+        "Python",
+        "SQL",
+        "PostgreSQL",
+        "Docker",
+        "Git",
+        "REST"
     ],
     "matched_skills": [
+        "Python",
         "SQL",
-        "Git",
-        "Python"
+        "Git"
     ],
     "missing_skills": [
-        "COBOL",
-        "DB2"
+        "PostgreSQL",
+        "Docker",
+        "REST"
     ]
 }
