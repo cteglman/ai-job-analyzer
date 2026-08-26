@@ -1,20 +1,5 @@
-import json
-
-skills = [
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Docker",
-    "Git",
-    "REST",
-    "COBOL",
-    "DB2"
-]
-
-with open("data/candidate.json", "r", encoding="utf-8") as file:
-    candidate = json.load(file)
-       
-def analyze_job(text, candidate_skills):
+      
+def analyze_job(text, candidate_skills, skills):
     long_words = 0
     ord_list = text.split()
     found_skills = []
@@ -43,21 +28,15 @@ def analyze_job(text, candidate_skills):
         match_percentage = 0
 
     resultat = {
-        "characters": len(text), 
-        "words": len(ord_list),
-        "long_words": long_words,
-        "match_percentage": match_percentage,
-        "found_skills": found_skills,
-        "matched_skills": matched_skills,
-        "missing_skills": missing_skills
+        "job_analysis": {
+            "match_percentage": match_percentage,
+            "matched_skills": matched_skills,
+            "missing_skills": missing_skills
+            },
+        "text_statistics": {
+            "characters": len(text), 
+            "words": len(ord_list),
+            "long_words": long_words,            
+            }
         }
     return resultat
-
-with open("data/jobannonce.txt", "r", encoding="utf-8") as file:
-    text = file.read()
-
-result = analyze_job(text, candidate["skills"])
-
-with open("output/analyse.json", "w", encoding="utf-8") as file:
-    json.dump(result, file, indent=4, ensure_ascii=False)
-

@@ -1,24 +1,30 @@
 {
-    "characters": 150,
-    "words": 28,
-    "long_words": 4,
-    "match_percentage": 50.0,
-    "found_skills": [
-        "Python",
-        "SQL",
-        "PostgreSQL",
-        "Docker",
-        "Git",
-        "REST"
-    ],
-    "matched_skills": [
-        "Python",
-        "SQL",
-        "Git"
-    ],
-    "missing_skills": [
-        "PostgreSQL",
-        "Docker",
-        "REST"
-    ]
+    "candidate": {
+        "name": "Test Candidate",
+        "skills": [
+            "Cobol",
+            "DB2",
+            "SQL",
+            "Git",
+            "Python"
+        ]
+    },
+    "job_analysis": {
+        "match_percentage": 50.0,
+        "matched_skills": [
+            "Python",
+            "SQL",
+            "Git"
+        ],
+        "missing_skills": [
+            "PostgreSQL",
+            "Docker",
+            "REST"
+        ]
+    },
+    "text_analysis": {
+        "characters": 150,
+        "words": 28,
+        "long_words": 4
+    }
 }
